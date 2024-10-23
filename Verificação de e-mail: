@@ -1,0 +1,28 @@
+// Classe Usuario com nome e email
+class Usuario {
+    constructor(nome, email) {
+        this.nome = nome;
+        this.email = email;
+    }
+
+    // Método para validar o e-mail
+    validarEmail() {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex que valida e-mail
+        return emailRegex.test(this.email); // Retorna se o e-mail é válido
+    }
+}
+
+// Exemplo de uso da classe Usuario
+const usuario = new Usuario("Maria", "maria@email.com");
+
+if (!usuario.validarEmail()) {
+    console.log("E-mail inválido!");
+} else {
+    console.log("E-mail válido.");
+}
+const usuario1 = new Usuario("João", "joao@example.com");
+console.log(usuario1.validarEmail()); // true
+const usuario2 = new Usuario("Ana", "anaexample.com");
+console.log(usuario2.validarEmail()); // false
+const usuario3 = new Usuario("Pedro", "pedro@");
+console.log(usuario3.validarEmail()); // false
